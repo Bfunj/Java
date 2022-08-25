@@ -1,5 +1,11 @@
 package Step05;
-
+/*
+ * 
+ * 2022.05.28
+ * 백현조
+ * 셀프넘버
+ * 
+ */
 import java.util.Scanner;
 
 public class _02 {
@@ -14,7 +20,7 @@ public class _02 {
 	int[] arry = new int[10000];
 	
 	for(int i=0; i<arry.length;i++) {
-		s_sum = s+s%10+s/10+s/100+s/1000;
+		s_sum = s+s%10+(s/10)%10+(s/100)%10+(s/1000)%10;
 		if(s_sum<=10000) {
 		arry[s_sum-1]=-1;
 		}
