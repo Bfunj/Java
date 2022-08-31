@@ -1,6 +1,6 @@
 package Step07;
 
-import java.util.Scanner;
+
 
 /*
  * 
@@ -15,7 +15,7 @@ import java.util.Scanner;
  * 1<= k,n <=14
  * 
  */
-
+import java.util.Scanner;
 
 public class _05_10250 {
 	public static void main(String[] args)  {
@@ -31,9 +31,10 @@ public class _05_10250 {
 		}
 		sc.close();		
 	}
+	
 	public static int hosu(int a, int b) {	
-		int[][] ingu= new int[14][14];
-		for(int i=0;i<14;i++) {
+		int[][] ingu= new int[15][15];
+		for(int i=0;i<15;i++) {
 			ingu[0][i]=i+1;
 			ingu[i][0]=1;
 		}
