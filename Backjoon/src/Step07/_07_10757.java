@@ -28,5 +28,4 @@ public class _07_10757 {
 		big_int_A=big_int_A.add(big_int_B);
 		System.out.println(big_int_A.toString());
 	}
-	
 }
