@@ -17,13 +17,33 @@ public class _03_11653 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);	
 		int number = sc.nextInt();
-		double test =  Math.sqrt(number);
 		int count=0;
+
 	
-	for(int i=1; i<Math.sqrt(number); i++ ) {
-		
-		
-		}
+			for(int j=0;j<100;j++) {
+			for(int i=1; i<Math.sqrt(number)+1; i++ ) {
+				if(number%i==0) count ++;
+				}
+	
+			if(count ==1) {
+				if(number>1) {
+				System.out.println(number);}
+				break;
+				}
+			else {count=0;
+					for(int i=2; i<Math.sqrt(number)+1; i++ ) {
+						if(number%i==0) {
+							System.out.println(i);
+							number=number/i;
+							break;
+							}
+						}
+	
+	
+				}
+			}
+
+
 		sc.close();
 	}
 }
