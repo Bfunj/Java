@@ -15,9 +15,32 @@ package Step06;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
 public class _05_1157 {
 	public static void main(String[] args) throws IOException {
-			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
+		String str = br.readLine();
+		
+		int[] stack = new int[26];
+		Arrays.fill(stack , 0);
+		for(int i=0 ;i<str.length() ; i++)
+		{
+			if('A'<= str.charAt(i) && str.charAt(i)<='Z') {
+				stack[str.charAt(i)-'A']++;
+			}else {stack[str.charAt(i)-'a']++;}
+		}
+		System.out.println(stack[0]);
+		
+	}//main end
+}//class end 
+
+
+
+
+
+/*
+
+BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
 			String str = br.readLine();
 			int[] co = new int['z'-'a'+1];
 			int max=0;
@@ -30,7 +53,8 @@ public class _05_1157 {
 							co[j]++;
 					}
 				}
-			}		
+			}	
+			
 			for(int i = 0 ; i < co.length; i++) {
 				if(co[i]>max) {
 				max = co[i];
@@ -44,6 +68,6 @@ public class _05_1157 {
 			}
 			if(count2 == 1)System.out.println((char)(A+count));
 			else System.out.println("?");
-	}//main end
-}//class end 
 
+
+*/
