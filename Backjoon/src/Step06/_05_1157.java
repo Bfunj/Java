@@ -2,7 +2,7 @@ package Step06;
 
 /*
  * 
- * 2022.08.26
+ * 2022.09.13
  * 백현조
  * 1157번 문제
  * 단어 공부
@@ -23,13 +23,32 @@ public class _05_1157 {
 		
 		int[] stack = new int[26];
 		Arrays.fill(stack , 0);
+		int max=0;
+		int str_num=0;
+		int cs=0;
 		for(int i=0 ;i<str.length() ; i++)
 		{
 			if('A'<= str.charAt(i) && str.charAt(i)<='Z') {
 				stack[str.charAt(i)-'A']++;
 			}else {stack[str.charAt(i)-'a']++;}
 		}
-		System.out.println(stack[0]);
+		for(int i =0 ; i < stack.length; i++) {
+			if(max < stack[i]) {
+				max = stack[i];
+				str_num=i;
+				cs=0;
+			}
+			else if(max == stack[i]) {
+			cs=1;
+			}
+		}
+		
+		switch(cs) {
+		case 0: System.out.println((char) ('A'+str_num));
+			break;
+		case 1: 	System.out.println("?");
+			break;
+		}
 		
 	}//main end
 }//class end 
@@ -39,7 +58,7 @@ public class _05_1157 {
 
 
 /*
-
+// 메모리 문제 코딩
 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));		
 			String str = br.readLine();
 			int[] co = new int['z'-'a'+1];
