@@ -17,8 +17,8 @@ public class InterfaceTest {
 		Bulb bulb = new Bulb();
 		Socket socket = new Cable(bulb);
 		
-		socket.switchOn();
-		socket.switchOff();
+		//socket.switchOn();
+		//socket.switchOff();
 		
 		
 	}
