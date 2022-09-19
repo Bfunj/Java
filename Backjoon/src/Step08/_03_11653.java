@@ -1,7 +1,5 @@
 package Step08;
 
-
-
 /*
  * 
  * 2022.09.01
@@ -18,13 +16,10 @@ public class _03_11653 {
 		Scanner sc = new Scanner(System.in);	
 		int number = sc.nextInt();
 		int count=0;
-
-	
 			for(int j=0;j<100;j++) {
 			for(int i=1; i<Math.sqrt(number)+1; i++ ) {
 				if(number%i==0) count ++;
 				}
-	
 			if(count ==1) {
 				if(number>1) {
 				System.out.println(number);}
@@ -38,12 +33,8 @@ public class _03_11653 {
 							break;
 							}
 						}
-	
-	
 				}
 			}
-
-
 		sc.close();
 	}
 }

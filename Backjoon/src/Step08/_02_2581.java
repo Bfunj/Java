@@ -30,13 +30,11 @@ public class _02_2581 {
 				if( (start_number + i) %j ==0) count ++;
 				}
 			}
-			
 			if (count == 1) { 
 				sum += (start_number + i);
 				if( start_number + i < min ) min = start_number + i ;
 			}
 			count =0;
-			
 		}
 		if(sum==0)System.out.println(-1);
 		else {

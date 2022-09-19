@@ -1,7 +1,5 @@
 package Step08;
 
-
-
 /*
  * 
  * 2022.09.01
@@ -27,9 +25,7 @@ public class _01_1978 {
 			}
 			if (count == 1) result ++;
 			count =0;
-			
 		}
-		
 		System.out.println(result);
 		sc.close();
 	}

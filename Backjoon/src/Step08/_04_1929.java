@@ -1,9 +1,6 @@
 package Step08;
 
 
-
-
-
 /*
  * 
  * 2022.09.02
@@ -29,7 +26,6 @@ public class _04_1929 {
 	
 		for(int j=0;j<=number_end-number_start;j++) {
 			
-		
 			for(int i=1; i<=Math.sqrt(number_start+j); i++ ) {
 				if((number_start+j)%i==0) count ++;
 				if(count >1) break;
