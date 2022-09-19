@@ -12,26 +12,25 @@ public class _1107 {
 		int unmove_num_su= sc.nextInt(); // 사용불가한 버튼의 수
 		int[] unmove_num = new int [unmove_num_su]; // 사용불가한 버튼
 		int[] move_num = {0,1,2,3,4,5,6,7,8,9};
-		int[] M_num= new int [11-unmove_num_su];
+		int[] M_num= new int [10-unmove_num_su]; //사용 가능한 버튼
+		String result="";
 		int M=0;
+		// 사용불가능한 버튼 입력
 		for(int i=0; i<unmove_num.length;i++) {
 			unmove_num[i] = sc.nextInt(); // 사용불가한 버튼	
 			}
+		// 사용불가능한 버튼 정의
 		for(int i=0 ;i<unmove_num.length;i++) {
 			move_num[ unmove_num[i] ] =100;
-		}/*
-		for(int i=0;i<M_num.length;i++) {
+		}
+		// 사용가능한 버튼 배열 설정
+		for(int i=0;i<10;i++) {
 				if(move_num[i]<100) {
 					M_num[M] = move_num[i];
 					M++;
 			}
-		}*/
-		System.out.println("d");
-		for(int i=0;i<move_num.length;i++) {
-		System.out.println(move_num[i]);
 		}
 	
-		/*
 		int Start_ch=100; // 현재 채널
 		String Move_ch_S = Integer.toString(Move_ch); // 이동할 채널을 문자열로 변환
 		char[] Move_ch_C = new char[Move_ch_S.length()]; // 문자열을 문자로 변환
@@ -39,15 +38,25 @@ public class _1107 {
 			Move_ch_C[i]=Move_ch_S.charAt(i);
 		}
 		
-		for( int i = 0 ; i <unmove_num_su;i++) {
-			if(Move_ch_C[0]-48 == unmove_num[i]) {
-				System.out.println("첫번째 자리 버튼이 안눌러짐");
+		for( int i = 0 ; i <M_num.length;i++) {
+			if(Move_ch_C[0]-48 == M_num[i]) {
+				System.out.println("첫번째 자리 버튼 눌러짐");
+				result += Integer.toString(M_num[i]);
+			}
+		}
+		for( int i = 0 ; i <M_num.length;i++) {
+			if(Move_ch_C[1]-48 == M_num[i]) {
+				System.out.println("두번째 자리 버튼 눌러짐");
+				result += Integer.toString(M_num[i]);
 			}
 		}
 		
-		System.out.println(Move_ch_C[0]-48);*/
+		System.out.println(result);
+		
 	
 		sc.close();
 	}
+	
+	
 
 }
