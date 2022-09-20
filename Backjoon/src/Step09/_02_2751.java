@@ -20,23 +20,54 @@ package Step09;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class _02_2751 {
+	
+	public static int[] src;
+	public static int[] tmp;
+
+	
 	public static void main(String[] args) throws IOException {
+		
+		
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));		
 		int test = Integer.parseInt(bf.readLine());
-		int[] arry =new int[test];
-			
+		src =new int[test];
+		tmp = new int[src.length];
 		for(int i =0 ; i<test ; i++) {
-			arry[i] = Integer.parseInt(bf.readLine());
+			src[i] = Integer.parseInt(bf.readLine());
 		}
-		
-		Arrays.sort(arry);
-		
-		for(int i : arry) {
-			System.out.println(i);
-		}
-		
+		mergeSort(0, src.length-1);
+		printArray(src);
+	
 	}//main end
+	
+	public static void mergeSort(int start, int end) {
+		if(start < end) {
+			int mid = (start +end)/2;
+			
+			mergeSort(start, mid);
+            mergeSort(mid+1, end);
+			int p = start;
+			int q = mid +1;
+			int idx =p;
+			while(p<=mid || q<=end) {
+				if(q>end || (p<=mid && src[p]< src[q] )) {
+					tmp[idx++] = src[p++];
+				}else {
+					tmp[idx++] = src[q++];
+				}
+			}//while end
+			for(int i=start ;i<=end;i++) {
+				src[i]=tmp[i];
+			}
+		}
+	}
+	
+	public static void printArray(int[] a) {
+		for(int i=0;i<a.length;i++){
+			System.out.print(a[i]+" ");
+			System.out.println();
+		}
+	}
 }// class end
