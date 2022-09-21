@@ -70,4 +70,6 @@ public class _02_2751 {
 			System.out.println();
 		}
 	}
+	
+	
 }// class end
