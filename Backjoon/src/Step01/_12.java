@@ -17,6 +17,8 @@ public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
 	int a = sc.nextInt();
 	int b = sc.nextInt();
+	int sum=0;
+	/*
 	int line1=0;
 	int line2=0;
 	int line3=0;
@@ -26,7 +28,13 @@ public static void main(String[] args) {
 	System.out.println(line1);
 	System.out.println(line2);
 	System.out.println(line3);
-	System.out.println(line1 + line2*10 +line3*100);
+	System.out.println(line1 + line2*10 +line3*100);*/
+	
+	for(int i = 0 ; i <3 ; i++) {
+		System.out.println(a*(b%10));
+		sum+=a*(b%10);
+		b/=10;
+	}
 
 	sc.close();
 }

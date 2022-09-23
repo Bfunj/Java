@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class _06 {
 public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	int num1 = sc.nextInt();
-	int num2 = sc.nextInt();
-	double num3 = (double)num1 / (double)num2;
+	double num1 = sc.nextInt();
+	double num2 = sc.nextInt();
+	double num3 = num1 / num2;
 	System.out.println(num3);
 	sc.close();
 }

@@ -15,24 +15,19 @@ import java.util.Scanner;
 public class _10 {
 public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	int ki = sc.nextInt();
-	int qu = sc.nextInt();
-	int ro = sc.nextInt();
-	int bi = sc.nextInt();
-	int kn = sc.nextInt();
-	int ph = sc.nextInt();
+
+	int[] chess = new int[6]; // 입력 받는 체수의 수
+	int[] chess_su = {1,1,2,2,2,8}; // 체스 기본 구성 수
 	
-	System.out.print(1-ki);
-	System.out.print(" ");
-	System.out.print(1-qu);
-	System.out.print(" ");
-	System.out.print(2-ro);
-	System.out.print(" ");
-	System.out.print(2-bi);
-	System.out.print(" ");
-	System.out.print(2-kn);
-	System.out.print(" ");
-	System.out.print(8-ph);
+	// 체스의 피스 개수를 입력 받기
+	for(int i =0;i<chess.length;i++) {
+		chess[i] = sc.nextInt();
+	}
+	// 입력받은 피스 개수와 올바른 체스 개수를 비교
+	for(int i=0 ; i<chess.length;i++) {
+		chess_su[i] = chess_su[i]-chess[i];
+		System.out.print(chess_su[i]+" ");
+	}
 	
 	sc.close();
 }
