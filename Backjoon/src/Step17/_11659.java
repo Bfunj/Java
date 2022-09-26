@@ -19,17 +19,21 @@ public class _11659 {
 		StringTokenizer st1 = new StringTokenizer(bf.readLine()); 
 		StringTokenizer st2 = new StringTokenizer(bf.readLine()); 
 		Scanner sc = new Scanner(System.in);
-		
 		int[] arry = new int[Integer.parseInt(st1.nextToken())];
 		int test = Integer.parseInt(st1.nextToken());
+		String[] str= new String[test];
 		
 		for(int i=0; i<arry.length; i++) {
 			arry[i] = Integer.parseInt(st2.nextToken());
 		}
 		
-		for(int i=0 ;i<test ; i++) {
+		for(int i=0 ;i<str.length ; i++) {
+			for(int j=0; j<2;j++) {
+				
+				
+			}
 			int result = su(sc.nextInt(), sc.nextInt(), arry);
-				System.out.println(result);
+				
 		}
 	sc.close();	
 	}

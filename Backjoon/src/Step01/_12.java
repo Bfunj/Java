@@ -1,7 +1,6 @@
 package Step01;
 
 import java.util.Scanner;
-
 /*
  * 
  * 2022/08/19
@@ -15,27 +14,39 @@ import java.util.Scanner;
 public class _12 {
 public static void main(String[] args) {
 	Scanner sc = new Scanner(System.in);
-	int a = sc.nextInt();
-	int b = sc.nextInt();
-	int sum=0;
-	/*
-	int line1=0;
-	int line2=0;
-	int line3=0;
-	line1=a*(b%10);
-	line2=a*((b/10)%10);
-	line3=a*(b/100);
-	System.out.println(line1);
-	System.out.println(line2);
-	System.out.println(line3);
-	System.out.println(line1 + line2*10 +line3*100);*/
-	
-	for(int i = 0 ; i <3 ; i++) {
-		System.out.println(a*(b%10));
-		sum+=a*(b%10);
-		b/=10;
+	int a = sc.nextInt(); 						//--1
+	int b = sc.nextInt(); 						//--1
+	int result=0;								//--2
+	for(int i = 0 ; i <3 ; i++) {				//--3
+		System.out.println(a*(b%10));			//--4.1
+		result += (a*(b%10))*Math.pow(10, i); 	//--5
+		b/=10;									//--4.2
 	}
-
+	System.out.println(result);					//--6
 	sc.close();
 }
 }
+
+/*
+ 
+ 	Scanner sc = new Scanner(System.in);
+	int a = sc.nextInt(); 						//--1
+	int b = sc.nextInt(); 						//--1
+	int result=0;								//--2
+	
+	for(int i = 0 ; i <3 ; i++) {				//--3
+		System.out.println("반복문 i의 값은 : "+i);
+		System.out.println("a : "+a);
+		System.out.println("b : "+b);
+		System.out.println("a와 곱해질 b의 값은 : "+b%10);
+		System.out.println((i+1)+"번째 출력 값 :"+a*(b%10));			//--4.1
+		result += (a*(b%10))*Math.pow(10, i); 	//--5
+		System.out.println("result :"+ result);
+		b/=10;									//--4.2
+		System.out.println();
+	}
+	System.out.println("--반복문 종료 최종 결과 값--");
+	System.out.println(result);					//--6
+	sc.close();
+ */
+
