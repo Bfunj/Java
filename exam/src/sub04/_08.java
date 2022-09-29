@@ -36,8 +36,6 @@ public class _08 {
 	}
 	Set<Integer> treeSet = new TreeSet<>(lottoSet);
 	return treeSet;
-
-	
 	}
 
 }// class end
