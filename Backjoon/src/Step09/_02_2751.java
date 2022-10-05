@@ -17,13 +17,46 @@ package Step09;
  * - 첫째 줄부터 N개의 줄에 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력한다.
  * 
  */
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Scanner;
 
 public class _02_2751 {
 	
-	public static int[] src;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
+		
+		int N=sc.nextInt();
+		
+		ArrayList<Integer> list = new ArrayList<>();
+		
+		for(int i=0; i<N ; i++) {
+			list.add(sc.nextInt());
+		}
+		
+		Collections.sort(list);
+		
+		for(int value : list) {
+			sb.append(value).append('\n');
+		}
+		System.out.println(sb);
+		sc.close();
+	}
+	
+	
+}// class end
+
+
+
+
+
+
+
+
+/*
+ * 	public static int[] src;
 	public static int[] tmp;
 
 	
@@ -70,6 +103,4 @@ public class _02_2751 {
 			System.out.println();
 		}
 	}
-	
-	
-}// class end
+ */
