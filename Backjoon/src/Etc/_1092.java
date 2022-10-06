@@ -23,35 +23,50 @@ public class _1092 {
 			for(int i=0; i<N ; i++) {
 				list.add(Integer.parseInt(st.nextToken()));
 			}
-			Collections.sort(list);
+			Collections.sort(list,Collections.reverseOrder());
 		
-			
-			
 			int N2=Integer.parseInt(br.readLine());
 			ArrayList<Integer> list2 = new ArrayList<>();
 			StringTokenizer st2 = new StringTokenizer(br.readLine());
 			for(int i=0; i<N2 ; i++) {
 				list2.add(Integer.parseInt(st2.nextToken()));
 			}
-			Collections.sort(list2);
+			Collections.sort(list2,Collections.reverseOrder());
+			
 			for(int value : list2) {
 				sb2.append(value).append(' ');
-			}
-			
-			System.out.println(sb);
-			System.out.println(list.get(1));
-			System.out.println(sb2);
-			System.out.println(list2.get(1));
-			for(int i=0;;i++) {
-			if(list2.get(0)>list.get(i)) {
-					list.remove(0);
-				}else break;
 			}
 			
 			for(int value : list) {
 				sb.append(value).append(' ');
 			}
-			System.out.println("list"+sb);					
+			
+			System.out.println("list :"+sb);
+			System.out.println("list2 :"+sb2);
+			int idx_1 =0;
+			int idx_2 =0;
+			int count =0;
+			
+			if(list.get(0)<list2.get(0)) {
+				System.out.println("-1");
+			}
+			else {
+			
+			
+			while(list2.size()>0) {
+				if(list.get(idx_1) >= list.get(idx_2)) {
+					list2.remove(idx_2);
+					idx_1++;
+				}else idx_2++;
+				if(list.size() == idx_1) {
+					idx_1 =0;
+					idx_2 =0;
+					count++;
+				}
+			}
+			}
+			System.out.println(count);
+
 	
 	}
 }
