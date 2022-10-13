@@ -38,7 +38,20 @@ public class CountingSort {
 		}
 		System.out.println("\n\n");
 		
+		// counting 배열
+		System.out.println("counting[]");
+		for(int i=0; i <counting.length;i++) {
+			if(i%10==0) System.out.println();
+			System.out.print(counting[i] + "\t");
+		}System.out.println("\n\n");
 				
+		// 정렬된 배열
+		System.out.println("result[]");
+		for(int i=0;i<result.length;i++) {
+			if(i%10==0) System.out.println();
+			System.out.print(result[i]+"\t");
+		}
+		System.out.println();
 	}
 
 }
