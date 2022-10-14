@@ -1,12 +1,5 @@
 package Step09;
 
-
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-
 /*
  * 2022.10.13
  * 통계학
@@ -25,7 +18,10 @@ import java.util.ArrayList;
  * - 넷째 줄에는 범위를 출력한다.
  * 
  */
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 
 public class _05_2108 {
@@ -42,7 +38,7 @@ public class _05_2108 {
 		ArrayList<Integer> choibin = new ArrayList<>();
 		for(int i=0 ; i<N;i++) {
 			int num = Integer.parseInt(br.readLine());
-			if(num>0) counting_plus[num]++;
+			if(num>=0) counting_plus[num]++;
 			else {
 				num=num*(-1);
 				counting_minus[num]++;
@@ -73,7 +69,7 @@ public class _05_2108 {
 		
 		}
 		
-		
+		///////////////////
 		ArrayList<Integer> ar = new ArrayList<>();
 		
 		for(int i=4000 ;i>0;i--) {
@@ -83,7 +79,7 @@ public class _05_2108 {
 				sum += i*(-1);
 			}
 		}
-		for(int i=1 ;i<4001;i++) {
+		for(int i=0 ;i<4001;i++) {
 			while(counting_plus[i]>0) {
 				ar.add(i);
 				counting_plus[i]--;
@@ -91,16 +87,16 @@ public class _05_2108 {
 			}
 		}
 		
-		System.out.println(ar);
-		
+		//System.out.println(ar);
+		//System.out.print("산술평균");
 		System.out.println(Math.round(sum/N)); //첫째줄 소수첫째자리 반올림
-		
+		//System.out.print("중앙값");
 		System.out.println(ar.get(N/2)); // 둘째줄
 		
-		
+		//System.out.print("최빈값");
 		if(choibin.size()>1) System.out.println(choibin.get(1)); // 셋째줄
 		else System.out.println(choibin.get(0)); // 셋째줄
-		
+		//System.out.print("범위");
 		System.out.println(ar.get(N-1)-ar.get(0)); // 넷째줄
 		
 		
