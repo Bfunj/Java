@@ -1,11 +1,12 @@
 package Step11;
 
-import java.util.Scanner;
+
 
 /*
- * 
+ *  && max_num >= num[i]+num[j]+num[k]
  * 블랙잭
  */
+import java.util.Scanner;
 public class _01_2798 {
 	public static void main(String[] args) {
 		
@@ -19,8 +20,9 @@ public class _01_2798 {
 		}
 
 		for(int i=0;i<card_su-2;i++) {
-			for(int j=1;j<card_su-1;j++) {
-				for(int k=2;k<card_su;k++) {
+			for(int j=i+1;j<card_su-1;j++) {
+				for(int k=j+1;k<card_su;k++) {
+					//System.out.println("i :"+i+" j :"+j+" k :"+k);
 					if(sum <= num[i]+num[j]+num[k] && max_num >= num[i]+num[j]+num[k]) {
 						sum = num[i]+num[j]+num[k];
 					}
