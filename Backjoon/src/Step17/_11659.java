@@ -15,33 +15,26 @@ import java.util.StringTokenizer;
  */
 public class _11659 {
 	public static void main(String[] args) throws NumberFormatException, IOException {
+		
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st1 = new StringTokenizer(bf.readLine()); 
-		StringTokenizer st2 = new StringTokenizer(bf.readLine()); 
-		Scanner sc = new Scanner(System.in);
+		StringTokenizer st1 = new StringTokenizer(bf.readLine()); //첫번째 줄 입력 
+		StringTokenizer st2 = new StringTokenizer(bf.readLine()); //두번째 줄 입력
+	
 		int[] arry = new int[Integer.parseInt(st1.nextToken())];
 		int test = Integer.parseInt(st1.nextToken());
-		String[] str= new String[test];
 		
 		for(int i=0; i<arry.length; i++) {
 			arry[i] = Integer.parseInt(st2.nextToken());
 		}
 		
-		for(int i=0 ;i<str.length ; i++) {
-			for(int j=0; j<2;j++) {
-				
-				
-			}
-			int result = su(sc.nextInt(), sc.nextInt(), arry);
-				
-		}
-	sc.close();	
 	}
+
+	
 	public static int su(int a , int b, int[] arry) {
 		int sum=0;	
 		for(int i=a-1;i<b;i++ ) {
 			sum += arry[i];
-		}	
+		}
 		return sum;
 	}
 }
