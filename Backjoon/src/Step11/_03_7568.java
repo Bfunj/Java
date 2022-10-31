@@ -29,12 +29,13 @@ public class _03_7568 {
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		people[] arry = new people[n];
-		
+		/*
 		for(int i=0 ; i<n;i++) {
 			arry[i].setWeight(sc.nextInt());
 			arry[i].setHeight(sc.nextInt());
-		}
-		
+		}*/
+		arry[0].setHeight(5);
+		arry[0].setWeight(10);
 		System.out.println(arry[0].getHeight());
 		System.out.println(arry[0].getWeight());
 		
