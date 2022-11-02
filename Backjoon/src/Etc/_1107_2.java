@@ -1,5 +1,6 @@
 package Etc;
 
+import java.util.Arrays;
 /*
  move_ch : 이동할 채널(String)
 dont_bt.length : 고장난 버튼의 수(String)
@@ -20,28 +21,51 @@ public class _1107_2 {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		// input
-		String Move_ch = sc.next();
-		char[] DontButton = new char[sc.nextInt()];
-		for(int i=0;i<DontButton.length;i++) {
-			DontButton[i] = sc.next().charAt(0);
-			}
-		//input 종료
 		
-		String Start_ch="100"; // 현재 채널
-		char[] Move_ch_C = new char[Move_ch.length()]; // 문자열을 문자로 변환
-		for(int i = 0; i<Move_ch.length();i++) {
-			Move_ch_C[i]=Move_ch.charAt(i);
+		int move_ch = sc.nextInt();
+		int min=500000;
+		
+		int now_ch =100;
+		boolean[] moving_ch = new boolean[1000000];
+		int broken_button_su = sc.nextInt();
+		int[] broken_button =new int[broken_button_su];
+		Arrays.fill(moving_ch, true);
+		for(int i=0; i<broken_button_su; i++) {
+			broken_button[i]=sc.nextInt();
+		}
+	
+		for(int i =0 ; i<1000000;i++) {	
+			String num =String.valueOf(i);	// 0부터 50만까지 문자열로변환	
+			String num2 = String.valueOf(move_ch);
+			if(num2.length()+1 == num.length()) break;
+			for(int n =0;n<num.length();n++) { // 자리수 체크
+				for(int j =0; j<broken_button_su; j++) { // 고장난 버튼이랑 각 자리수 비교			
+					if(broken_button[j] == Character.getNumericValue(num.charAt(n))) {
+						moving_ch[i]=false;				
+					}	
+				}
+			}
+		}
+
+		for(int i =0 ; i < 500001; i++) {
+			if(moving_ch[i] == true) {
+				if(min>Math.abs(move_ch-i)) {
+					min = Math.abs(move_ch-i);
+				}
+			}
+			
 		}
 		
-	
-		sc.close();
-	}
-	
-	public static void comp(String M_ch, int[] donbt) {
+		System.out.println(min);
 		
+	
+		
+		
+		
+		
+	
+
+	
 	}
-	
-	
 	
 }
