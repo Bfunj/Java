@@ -44,7 +44,7 @@ public class _1107_2 {
 			}
 		}
 		
-		if(Math.abs(min3)<=min) {
+		if(Math.abs(min3)<=min+String.valueOf(su).length()) {
 			System.out.println(Math.abs(min3)); // 이동할 채널이 100번 과 같이 현재 채널 근처일 경우
 		}
 		else System.out.println(min+String.valueOf(su).length());	// 이동할 채널이 엄청 멀어요
