@@ -1,5 +1,7 @@
 package Etc;
 
+
+
 /*
  * 
  * 다이아몬드 광산
@@ -7,55 +9,57 @@ package Etc;
  * 
  */
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class _1028 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		
-		Scanner sc = new Scanner(System.in);
-		int R= sc.nextInt();
-		int C= sc.nextInt();
-		int[][] Diamond = new int[R][C];
-		String[] str = new String[R];
-		int diamond_size = 0;
-		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer(br.readLine());
+		int R = Integer.parseInt(st.nextToken());
+		int C = Integer.parseInt(st.nextToken());
+		int result=0;
+		int[][] diamond = new int[R][C];
+		String[] str= new String[R];
+		for(int i=0; i<R ;i++) {
+			str[i]=br.readLine();
+			for(int j=0;j<C;j++) {
+				diamond[i][j]=str[i].charAt(j)-48;
+			}
+		}
+		int diamond_size = 0;	
 		if(R>C) {
 			diamond_size =(C+1)/2;
-		} else diamond_size =(R+1)/2;
-			
-		for(int i=0;i<R;i++) {
-			str[i] = sc.next();
-		}
+		} else diamond_size =(R+1)/2;	
 		
-		for(int i=diamond_size; i>=1;i--) {
-			if(dia_size(str,i)) {
-				System.out.println(i);
-				break;
-			}
-		}
-	
+		for(int i=diamond_size; i>=0;i--) {
+		
+			int range = i*2-1;
+			int mid =0;
+			
+			if(range<0)break;
+			for(int u=0 ;u<=diamond.length-range;u++ ) {
+				for(int j=0; j<=diamond[0].length-range;j++) {	
+					mid = j+range/2;
+					int q=0;
+					for(int k=0;k<range/2+1;k++) {
+						if(diamond[u][mid] != 1) break;
+						if(diamond[k+u][mid-q] ==1 && diamond[k+u][mid+q] ==1 ) {						
+							if(diamond[range-k-1+u][mid-q] ==1 && diamond[range-k-1+u][mid+q] ==1 ) {
+								q++;
+							}
+						}
+					}if(q == i && result<i) { result =i; break;}
+					if(result != 0) break;
+				}if(result != 0) break;
+			}if(result != 0) break;
+				
+		}	
+		System.out.println(result);
 	
 	}
-	public static boolean dia_size(String[] str, int size) {
-		
-		int start_R=0;
-		int start_C=0;
-		int end = size*2-2;
-		int i=0;
-		for(start_R=0;start_R<str.length;start_R++) {
-			for(start_C=0;start_C<str[0].length();start_C++) {
-				for(i=0;i<size;i++) {
-			
-			if(str[start_R+i].charAt(start_C+i) ==  1 && str[start_R+end-i].charAt(start_C+i) == 1) {
-				if(str[start_R+i].charAt(start_C-i) ==  1 && str[start_R+end-i].charAt(start_C-i) == 1) {
-					if(i==size-1) return true;
-					}
-				}
-				}
-			}
-		}
-		return false;
-	}
-	
 }
