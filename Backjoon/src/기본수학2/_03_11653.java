@@ -29,10 +29,11 @@ public class _03_11653 {
 					for(int i=2; i<Math.sqrt(number)+1; i++ ) {
 						if(number%i==0) {
 							System.out.println(i);
+							
 							number=number/i;
 							break;
 							}
-						}
+					}
 				}
 			}
 		sc.close();

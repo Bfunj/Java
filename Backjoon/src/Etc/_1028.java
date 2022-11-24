@@ -47,12 +47,12 @@ public class _1028 {
 					mid = j+range/2;
 					int q=0;
 					for(int k=0;k<range/2+1;k++) {
-						if(diamond[u][mid] != 1) break;
+						
 						if(diamond[k+u][mid-q] ==1 && diamond[k+u][mid+q] ==1 ) {						
 							if(diamond[range-k-1+u][mid-q] ==1 && diamond[range-k-1+u][mid+q] ==1 ) {
 								q++;
-							}
-						}
+							} else break;
+						}else break;
 					}if(q == i && result<i) { result =i; break;}
 					if(result != 0) break;
 				}if(result != 0) break;
