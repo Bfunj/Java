@@ -75,7 +75,7 @@ public class _1211_Dia5_test {
 				}		
 				if(num1_multi == Small_num) {
 					count ++;
-					System.out.println(num1_multi);
+					//System.out.println(num1_multi);
 				}
 				num1_multi=1;
 			}
